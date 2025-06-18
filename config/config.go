@@ -73,7 +73,7 @@ func New(app application.App) Config {
 	if app.Flags.Bind != "" {
 		cfg.Bind = app.Flags.Bind
 	}
-	if app.Flags.Port != 0 {
+	if app.Flags.Port != 0 && cfg.Port==0 {
 		cfg.Port = app.Flags.Port
 	}
 	if app.Flags.KeepAlive {
